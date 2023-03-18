@@ -22,21 +22,23 @@ public static class MauiProgram
 		return builder.Build();
 	}
 
-    public static MauiAppBuilder RegisterServices(this MauiAppBuilder mauiAppBuilder)
-    {
+	public static MauiAppBuilder RegisterServices(this MauiAppBuilder mauiAppBuilder)
+	{
 		//mauiAppBuilder.Services.AddSingleton<ViewModels.MainPageViewModel>();
 		return mauiAppBuilder;
 	}
 
-    public static MauiAppBuilder RegisterViewModel(this MauiAppBuilder mauiAppBuilder)
+	public static MauiAppBuilder RegisterViewModel(this MauiAppBuilder mauiAppBuilder)
 	{
 		mauiAppBuilder.Services.AddSingleton<ViewModels.MainPageViewModel>();
+		mauiAppBuilder.Services.AddSingleton<ViewModels.Page2ViewModel>();
 		return mauiAppBuilder;
 	}
 
 	public static MauiAppBuilder RegisterViews(this MauiAppBuilder mauiAppBuilder)
 	{
-        mauiAppBuilder.Services.AddSingleton<Views.MainPage>();
+		mauiAppBuilder.Services.AddSingleton<Views.MainPage>();
+		mauiAppBuilder.Services.AddSingleton<Views.Page2View>();
 		return mauiAppBuilder;
 	}
 }
